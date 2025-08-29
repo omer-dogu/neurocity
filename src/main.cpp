@@ -21,4 +21,5 @@ int main()
     player.printStats();
 
     Game game(player);
+    game.run();
 }
