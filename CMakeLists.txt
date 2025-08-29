@@ -9,6 +9,7 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 
 set(NEUROCITY_SOURCES
     src/main.cpp
+    src/game.cpp
 )
 
 add_executable(neurocity ${NEUROCITY_SOURCES})
