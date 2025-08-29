@@ -20,12 +20,12 @@ int main()
               "You'll handle all ED consults.\n"
               "Good luck.\n");
     printSlow("(The wall clock goes <tick... tock... tick... tock...>. Camera edges toward the clock.)\n");
-
     printSlow("Enter your name: ");
     std::string name;
     std::getline(std::cin, name);
     Player player(name);
     printSlow("Welcome, Dr. " + name + ".\n");
+    player.printStats();
 
     Game game(player);
 }

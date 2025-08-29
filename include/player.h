@@ -5,12 +5,17 @@
 
 class Player
 {
-    public:
-        Player() { }
-        Player(const std::string& name) : name(name) { }
-        Player(const int atk) : atk(atk) { }
-        Player(const std::string& name, const int atk) : name(name), atk(atk) { }
-        void printName()const { std::cout << name << "\n"; }
+public:
+    Player() { }
+    Player(const std::string& name) : name(name) { }
+    Player(const int atk) : atk(atk) { }
+    Player(const std::string& name, const int atk) : name(name), atk(atk) { }
+    void printName()const { std::cout << name << "\n"; }
+    void printStats()const { 
+        std::cout << "Dr. " << name << "\n";
+        std::cout << "HP: " << hp << ", ";
+        std::cout << "ATK: " << atk << "\n";
+    }
 
     // HP
     void printHp() const { std::cout << hp; }
