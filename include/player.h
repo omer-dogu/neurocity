@@ -2,6 +2,9 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
+
+#include "item.h"
 
 class Player
 {
@@ -30,10 +33,26 @@ public:
     void decreaseAtk(int value) { changeStat(atk, -value, 0, 100, "ATK decreased to "); }
     void increaseAtk(int value) { changeStat(atk, value, 0, 100, "ATK increased to "); }
 
+    // Inventory
+    void addItem(const Item& item) { inventory.push_back(item); }
+    void useItem(int index) {
+        if (index < 0 || index >= inventory.size()) return;
+        const Item& item = inventory[index];
+        hp += item.getHpBonus();
+        atk += item.getAtkBonus();
+        inventory.erase(inventory.begin() + index);
+    }
+    void printInventory() const {
+        for (size_t i = 0; i < inventory.size(); ++i) {
+            std::cout << i+1 << ". " << inventory[i].getName() << "\n";
+        }
+    }
+
 private:
     std::string name{"garip"};
     int hp{100};
     int atk{10};
+    std::vector<Item> inventory;
 
     void setStat(int& stat, int value, const char* statName) {
         stat = value;
