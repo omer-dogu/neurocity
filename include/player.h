@@ -13,8 +13,7 @@ public:
     void printName()const { std::cout << name << "\n"; }
     void printStats()const { 
         std::cout << "Dr. " << name << "\n";
-        std::cout << "HP: " << hp << ", ";
-        std::cout << "ATK: " << atk << "\n";
+        std::cout << "HP: " << hp << ", " << "ATK: " << atk << "\n";
     }
 
     // HP
@@ -36,7 +35,6 @@ private:
     int hp{100};
     int atk{10};
 
-    // Yardımcı fonksiyonlar
     void setStat(int& stat, int value, const char* statName) {
         stat = value;
         std::cout << "Player's " << statName << " set to " << stat << "\n";
